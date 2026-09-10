@@ -1,0 +1,20 @@
+# Environments
+venv/
+.venv/
+env/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables / Secrets (CRITICAL)
+.env
+
+# OS-specific files (Mac/Windows clutter)
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional, but recommended)
+.vscode/
