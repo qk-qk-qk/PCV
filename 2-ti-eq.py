@@ -46,10 +46,30 @@ def img_ekualisasi(image):
             
     return hasil
 
+
+def camera_capture():
+    cap = cv2.VideoCapture(0)
+    while True:
+        ret, cam = cap.read()
+        if not ret:
+            break
+        # img = cv2.imread('img/test.png')
+        # [h, w, c] = cam.shape
+
+        cam_gray = cv2.cvtColor(cam, cv2.COLOR_BGR2GRAY)
+        hasil_negatif = img_negatif(cam_gray)
+
+        cv2.imshow('test image', hasil_negatif)
+
+        # cv2.imshow('test image', cam)
+        if cv2.waitKey(1) == ord('q'):
+            break
+
 img = cv2.imread('img/test.png', cv2.IMREAD_GRAYSCALE)
     
 citra_negatif = img_negatif(img)
 citra_ekualisasi = img_ekualisasi(img)
+camera_capture()
     
 plt.figure(figsize=(15, 5))
     
